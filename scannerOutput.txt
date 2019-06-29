@@ -109,5 +109,5 @@ return is a keyword
 execution is an indentifier 
 terminates is an indentifier 
 OK is an indentifier 
-endfun is an indentifier 
+endfun is a keyword 
 main is a keyword 

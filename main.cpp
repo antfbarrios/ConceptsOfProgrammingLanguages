@@ -8,9 +8,9 @@ using namespace std;
 //function returns true if a keyword listed is found
 int keywordChecker(char keyBuffer[]){
 
-    char listKeywords[49][20] = {"auto","begin","break","case","char","const","continue","default",
+    char listKeywords[50][20] = {"auto","begin","break","case","char","const","continue","default",
 
-        "define","display","do","double","else","endif","enum","extern","float","for","function","goto",
+        "define","display","do","double","else","endif","endfun","enum","extern","float","for","function","goto",
 
         "if","implementations","import","input","int","is","long","main","not","of","pointer","register",
 
@@ -23,7 +23,7 @@ int keywordChecker(char keyBuffer[]){
     int i, scanFlag = 0;
     //here we compare 2 strings, looping through all keywords for 1 of them
     //sets scan flag to 1 after succesful comparison finding
-    for(i = 0; i < 49; ++i){
+    for(i = 0; i < 50; ++i){
         if(strcmp(listKeywords[i], keyBuffer) == 0){
             scanFlag = 1;
             break;
@@ -32,8 +32,15 @@ int keywordChecker(char keyBuffer[]){
     return scanFlag;
 }
 int main(){
+	cout << "\n\nTo change the name of the file to scan, you must change it, on the 3rd line in main(). It is currently scl.h " << endl;
+	cout << "\n\nTo change the name of the output file for the scanner, you must change it from line 47 in main(). It is currently scannerOutput.txt " << endl;
+ 
+	string toContinueString;
+	cout << "\nTo continue, type any characters and then press enter:\n" << endl;
+	cin >> toContinueString;
+
     char scanChar, keyBuffer[15], operators[] = "\"+-*/%=";//initializing
-    ifstream scannerFileIn("scannerInputSCL.txt");//looks for a file called scannerinput.txt
+    ifstream scannerFileIn("scl.h");//looks for a file called scannerinput.txt
     int i,j=0;
 //error handling, if unable to open
     if(!scannerFileIn.is_open()){
@@ -82,3 +89,4 @@ int main(){
 
     return 0;
 }
+
